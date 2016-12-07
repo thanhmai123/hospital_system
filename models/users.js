@@ -55,8 +55,7 @@ module.exports.updateToken = function (username, token) {
             current_user = data[0];
             current_user.token = token;
             current_user.save().then(function (document) {
-                console.log(document);
-                resolve(res);
+                resolve(document);
             }, function (err) {
                 console.log(err);
                 reject(err);
