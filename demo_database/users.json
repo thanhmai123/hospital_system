@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5846cac3ffd660599873cbeb"},"username":"Thanos","password":"1234","_type":"staff","token":""}
+{"_id":{"$oid":"5846cac9ffd660599873cbec"},"username":"Micky","password":"1234","_type":"patient","token":""}
+{"_id":{"$oid":"5846cae7ffd660599873cbed"},"username":"phu","password":"1234","_type":"doctor","token":""}
+{"_id":{"$oid":"5846cb00ffd660599873cbee"},"username":"thanh","password":"1234","_type":"lab_doctor","token":""}
