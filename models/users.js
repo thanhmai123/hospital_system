@@ -5,8 +5,8 @@ var mongoose = require('mongoose');
 
 
 mongoose.Promise = global.Promise;
-/*var uri = 'mongodb://localhost/hospital';
-mongoose.connect(uri);*/
+var uri = 'mongodb://localhost/hospital';
+// mongoose.connect(uri);
 
 console.log("OK");
 var UserSchema = mongoose.Schema({
@@ -33,13 +33,38 @@ module.exports.getUserByUserName = function (username) {
     return new Promise(function (resolve, reject) {
         User.find(query).then(function (data) {
             if (data.length == 0)
-                reject({msg: "user doesn't exists."});
+                reject({
+                    msg: "user doesn't exists."
+                });
             else
                 resolve(data);
         }, function (err) {
             reject(err);
         });
   });  
+};
+
+
+/*
+* this function will save token once user login
+* */
+module.exports.updateToken = function (username, token) {
+    var query = { username : username };
+    return new Promise(function (resolve, reject) {
+        User.find(query).then(function (data) {
+            current_user = data[0];
+            current_user.token = token;
+            current_user.save().then(function (document) {
+                console.log(document);
+                resolve(res);
+            }, function (err) {
+                console.log(err);
+                reject(err);
+            });
+        }, function (err) {
+            reject(err);
+        })
+    });
 };
 /*
 User.find({}).then(function (data) {

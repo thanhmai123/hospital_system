@@ -21,6 +21,12 @@ router.post('/', function(req, res, next) {
             if (password === user.password) {
                 console.log('login successful');
                 var token = md5(username + ''+ Date.now());
+
+                User.updateToken(username, token).then(function (document) {
+                    console.log(document);
+                }, function (err) {
+                    res.send(err);
+                });
                 res.send({
                     token: token
                 });
@@ -30,7 +36,6 @@ router.post('/', function(req, res, next) {
                 });
             }
         }, function (err) {
-            if (err) throw err;
             console.log(err);
             res.send(err);
         });
