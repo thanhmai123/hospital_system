@@ -25,3 +25,6 @@
 - go to link:
 
 `http://localhost:3000`
+
+
+![alt tag](/wireframe/staff1.pdf)
