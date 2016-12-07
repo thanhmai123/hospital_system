@@ -46,7 +46,3 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
-doctors.json
-lab_doctors.json
-staffs.json
-users.json
