@@ -4,4 +4,5 @@
 
 (function(){
     var socket=io();
+    var sock_2=io('/slash');
 })();

@@ -44,7 +44,11 @@ io.on('connection', function(socket){
 
 });
 
+var ns=io.of('/slash');
+ns.on('connection', function(socket){
+    console.log(socket.id+" connected");
 
+});
 
 
 
